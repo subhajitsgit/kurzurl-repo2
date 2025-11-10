@@ -1,0 +1,124 @@
+<div class="contact-container">
+  <div class="contact-content">
+    <!-- Header Section -->
+    <div class="header-section">
+      <h1 class="page-title">Get in Touch</h1>
+      <p class="page-subtitle">
+        Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+      <!-- Contact Form -->
+      <div class="form-section">
+        <form (ngSubmit)="onSubmit()" class="contact-form">
+          <div class="form-group">
+            <label for="name" class="form-label">Full Name</label>
+            <input
+              type="text"
+              id="name"
+              [(ngModel)]="formData.name"
+              name="name"
+              class="form-input"
+              placeholder="John Doe"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="form-label">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              [(ngModel)]="formData.email"
+              name="email"
+              class="form-input"
+              placeholder="john@example.com"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="subject" class="form-label">Subject</label>
+            <input
+              type="text"
+              id="subject"
+              [(ngModel)]="formData.subject"
+              name="subject"
+              class="form-input"
+              placeholder="How can we help?"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="message" class="form-label">Message</label>
+            <textarea
+              id="message"
+              [(ngModel)]="formData.message"
+              name="message"
+              class="form-textarea"
+              placeholder="Tell us more about your inquiry..."
+              rows="6"
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn" [disabled]="isSubmitting">
+            <span *ngIf="!isSubmitting">Send Message</span>
+            <span *ngIf="isSubmitting">Sending...</span>
+            <svg *ngIf="!isSubmitting" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M18 2L9 11M18 2L12 18L9 11M18 2L2 8L9 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+
+          <div *ngIf="submitSuccess" class="success-message">
+            ✓ Thank you! Your message has been sent successfully.
+          </div>
+          
+          <div *ngIf="submitError" class="error-message">
+            {{ submitError }}
+          </div>
+        </form>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="info-section">
+        <div class="info-card">
+          <div class="info-icon email-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M3 8L10.89 13.26C11.2187 13.4793 11.6049 13.5963 12 13.5963C12.3951 13.5963 12.7813 13.4793 13.11 13.26L21 8M5 19H19C19.5304 19 20.0391 18.7893 20.4142 18.4142C20.7893 18.0391 21 17.5304 21 17V7C21 6.46957 20.7893 5.96086 20.4142 5.58579C20.0391 5.21071 19.5304 5 19 5H5C4.46957 5 3.96086 5.21071 3.58579 5.58579C3.21071 5.96086 3 6.46957 3 7V17C3 17.5304 3.21071 18.0391 3.58579 18.4142C3.96086 18.7893 4.46957 19 5 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="info-title">Email Us</h3>
+          <p class="info-text">support&#64;linksnap.com</p>
+          <p class="info-description">We'll respond within 24 hours</p>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon location-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="info-title">Visit Us</h3>
+          <p class="info-text">123 Link Street</p>
+          <p class="info-description">San Francisco, CA 94102</p>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon support-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 13.5997 2.37562 15.1116 3.04346 16.4525C3.22094 16.8088 3.28001 17.2161 3.20712 17.6106L2.58151 20.8298C2.52074 21.1367 2.61016 21.4523 2.82182 21.6767C3.03347 21.9011 3.34216 22.0049 3.64875 21.9582L6.89426 21.4936C7.28866 21.4266 7.69549 21.4868 8.05144 21.6654C9.39155 22.3318 10.9025 22.7063 12.5 22.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8 12H8.01M12 12H12.01M16 12H16.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="info-title">Live Chat</h3>
+          <p class="info-text">Available 24/7</p>
+          <p class="info-description">Get instant support</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

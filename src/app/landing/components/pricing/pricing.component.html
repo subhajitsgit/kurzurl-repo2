@@ -1,0 +1,262 @@
+<section id="pricing" class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div class="d-inline-flex align-items-center rounded-pill border px-3 py-2 mb-3 bg-white">
+        <svg class="me-2" style="width: 16px; height: 16px; color: #a855f7;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+        </svg>
+        <span class="fw-medium small">Simple Pricing</span>
+      </div>
+      
+      <h2 class="display-4 fw-black mb-3">
+        Choose the perfect plan for your
+        <span class="text-gradient-primary">growing business</span>
+      </h2>
+      
+      <p class="lead text-secondary mx-auto" style="max-width: 700px;">
+        Start free and scale as you grow. No hidden fees, no surprises. 
+        Cancel or upgrade anytime.
+      </p>
+      <ul class="nav nav-tabs mb-4 justify-content-center">
+        <li class="nav-item">
+          <span class="nav-link" [class.active]="activeTab === PRICING_TAB.Monthly" (click)="changeActiveTab(PRICING_TAB.Monthly)">{{PRICING_TAB.Monthly}}</span>
+        </li>
+        <li class="nav-item">
+          <span class="nav-link" [class.active]="activeTab === PRICING_TAB.Yearly" (click)="changeActiveTab(PRICING_TAB.Yearly)">{{PRICING_TAB.Yearly}}</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      <!-- Free Plan -->
+      <div class="col-lg-3 col-md-6">
+        <div class="card h-100 border-2 shadow-sm">
+          <div class="card-body p-4 text-center">
+            <div class="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 64px; height: 64px; background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);">
+              <svg style="width: 32px; height: 32px; color: white;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </div>
+            
+            <h3 class="fw-black mb-2">Free</h3>
+            <p class="text-secondary mb-4">Perfect for personal use and testing</p>
+            
+            <div class="mb-4">
+              <span class="display-4 fw-black">$0</span>
+              <span class="text-secondary">/forever</span>
+            </div>
+            
+            <button class="btn btn-outline-primary w-100 mb-4">Get Started</button>
+            
+            <ul class="list-unstyled text-start">
+              <li class="mb-2">
+                <svg class="me-2" style="width: 20px; height: 20px; color: #10b981;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="small">1,000 links per month</span>
+              </li>
+              <li class="mb-2">
+                <svg class="me-2" style="width: 20px; height: 20px; color: #10b981;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="small">Basic analytics</span>
+              </li>
+              <li class="mb-2">
+                <svg class="me-2" style="width: 20px; height: 20px; color: #10b981;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="small">Standard support</span>
+              </li>
+              <li class="mb-2">
+                <svg class="me-2" style="width: 20px; height: 20px; color: #10b981;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="small">QR codes</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Core Plan (Popular) -->
+      <div class="col-lg-3 col-md-6">
+        <div class="card h-100 border-primary border-3 shadow-lg position-relative">
+          <span class="badge bg-gradient-primary position-absolute top-0 start-50 translate-middle px-3 py-2">Most Popular</span>
+          <div class="card-body p-4 text-center">
+            <div class="bg-gradient-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 64px; height: 64px;">
+              <svg style="width: 32px; height: 32px; color: white;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+              </svg>
+            </div>
+            
+            <h3 class="fw-black mb-2">Core</h3>
+            <p class="text-secondary mb-4">For professionals and growing businesses</p>
+            
+            <div class="mb-4">
+              <span class="display-4 fw-black">$19</span>
+              <span class="text-secondary">/month</span>
+            </div>
+            
+            <button class="btn btn-gradient-primary w-100 mb-4" (click)="checkout('Core', 'usd', 1900)">Start Free Trial</button>
+            
+            <ul class="list-unstyled text-start">
+              <li class="mb-2">
+                <svg class="me-2" style="width: 20px; height: 20px; color: #10b981;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="small">50,000 links per month</span>
+              </li>
+              <li class="mb-2">
+                <svg class="me-2" style="width: 20px; height: 20px; color: #10b981;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="small">Advanced analytics & insights</span>
+              </li>
+              <li class="mb-2">
+                <svg class="me-2" style="width: 20px; height: 20px; color: #10b981;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="small">Custom domains (3 domains)</span>
+              </li>
+              <li class="mb-2">
+                <svg class="me-2" style="width: 20px; height: 20px; color: #10b981;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="small">API access</span>
+              </li>
+              <li class="mb-2">
+                <svg class="me-2" style="width: 20px; height: 20px; color: #10b981;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="small">Priority support</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Growth Plan -->
+      <div class="col-lg-3 col-md-6">
+        <div class="card h-100 border-2 shadow-sm">
+          <div class="card-body p-4 text-center">
+            <div class="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 64px; height: 64px; background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);">
+              <svg style="width: 32px; height: 32px; color: white;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+              </svg>
+            </div>
+            
+            <h3 class="fw-black mb-2">Growth</h3>
+            <p class="text-secondary mb-4">For large teams and organizations</p>
+            
+            <div class="mb-4">
+              <span class="display-4 fw-black">$99</span>
+              <span class="text-secondary">/month</span>
+            </div>
+            
+            <button class="btn btn-outline-primary w-100 mb-4" (click)="checkout('Growth', 'usd', 9900)">Start Free Trial</button>
+            
+            <ul class="list-unstyled text-start">
+              <li class="mb-2">
+                <svg class="me-2" style="width: 20px; height: 20px; color: #10b981;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="small">Unlimited links</span>
+              </li>
+              <li class="mb-2">
+                <svg class="me-2" style="width: 20px; height: 20px; color: #10b981;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="small">Full analytics suite</span>
+              </li>
+              <li class="mb-2">
+                <svg class="me-2" style="width: 20px; height: 20px; color: #10b981;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="small">Unlimited custom domains</span>
+              </li>
+              <li class="mb-2">
+                <svg class="me-2" style="width: 20px; height: 20px; color: #10b981;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="small">Team management</span>
+              </li>
+              <li class="mb-2">
+                <svg class="me-2" style="width: 20px; height: 20px; color: #10b981;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="small">Dedicated account manager</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Premium Plan -->
+      <div class="col-lg-3 col-md-6">
+        <div class="card h-100 border-2 shadow-sm">
+          <div class="card-body p-4 text-center">
+            <div class="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 64px; height: 64px; background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);">
+              <svg style="width: 32px; height: 32px; color: white;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+              </svg>
+            </div>
+            
+            <h3 class="fw-black mb-2">Premium</h3>
+            <p class="text-secondary mb-4">For large teams and organizations</p>
+            
+            <div class="mb-4">
+              <span class="display-4 fw-black">$99</span>
+              <span class="text-secondary">/month</span>
+            </div>
+            
+            <button class="btn btn-outline-primary w-100 mb-4" (click)="checkout('Premium', 'usd', 9900)">Start Free Trial</button>
+            
+            <ul class="list-unstyled text-start">
+              <li class="mb-2">
+                <svg class="me-2" style="width: 20px; height: 20px; color: #10b981;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="small">Unlimited links</span>
+              </li>
+              <li class="mb-2">
+                <svg class="me-2" style="width: 20px; height: 20px; color: #10b981;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="small">Full analytics suite</span>
+              </li>
+              <li class="mb-2">
+                <svg class="me-2" style="width: 20px; height: 20px; color: #10b981;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="small">Unlimited custom domains</span>
+              </li>
+              <li class="mb-2">
+                <svg class="me-2" style="width: 20px; height: 20px; color: #10b981;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="small">Team management</span>
+              </li>
+              <li class="mb-2">
+                <svg class="me-2" style="width: 20px; height: 20px; color: #10b981;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="small">Dedicated account manager</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card mt-5 bg-light border-0">
+      <div class="card-body p-5 text-center">
+        <h3 class="fw-black mb-3">Need something custom?</h3>
+        <p class="text-secondary mb-4 mx-auto" style="max-width: 600px;">
+          We offer custom solutions for large enterprises with specific requirements. 
+          Volume discounts available for high-traffic applications.
+        </p>
+        <button class="btn btn-outline-primary px-4">Contact Sales</button>
+      </div>
+    </div>
+  </div>
+</section>

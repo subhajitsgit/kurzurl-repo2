@@ -1,0 +1,49 @@
+<header class="sticky-top border-bottom bg-white backdrop-blur">
+  <div class="container">
+    <nav class="navbar navbar-expand-md navbar-light py-3">
+      <!-- Logo -->
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <div class="logo-gradient">
+          <span class="fs-6 fw-black">K</span>
+        </div>
+        <span class="fw-black fs-5">
+          KurzUrl
+        </span>
+      </a>
+
+      <!-- Mobile Menu Button -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        (click)="toggleMenu()"
+        [attr.aria-label]="isMenuOpen ? 'Close menu' : 'Open menu'"
+        [attr.aria-expanded]="isMenuOpen"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navigation -->
+      <div class="collapse navbar-collapse" [class.show]="isMenuOpen">
+        <ul class="navbar-nav ms-auto me-4 mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link fw-medium text-secondary" href="#features">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-medium text-secondary" href="#pricing">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-medium text-secondary" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-medium text-secondary" href="#contact">Contact</a>
+          </li>
+        </ul>
+        
+        <div class="d-flex flex-column flex-md-row gap-2">
+          <button class="btn btn-outline-secondary" (click)="signIn()">Sign In</button>
+          <button class="btn btn-gradient-primary">Get Started Free</button>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
